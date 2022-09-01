@@ -17,11 +17,21 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
     <style>
-      p {
-        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      :root {
+        --r-heading-font-weight: 800;
+        --r-heading-text-transform: normal;
+        --r-heading-font: -apple-system, BlinkMacSystemFont, avenir next, avenir,
           helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial,
           sans-serif;
-        font-weight: 800;
+        --r-main-font: var(--r-heading-font);
+      }
+
+      p {
+        font-weight: var(--r-heading-font-weight);
+      }
+
+      blockquote * {
+        font-weight: 300;
       }
 
       kbd {
@@ -43,7 +53,6 @@
     <div class="reveal">
       <div class="slides">
         <section
-          class="r-fit-text"
           data-markdown="slides.md"
           data-separator-vertical="^--"
           data-separator-notes="^Note:"
@@ -67,6 +76,7 @@
         hash: true,
 
         transition: "none",
+        backgroundTransition: "none",
         // controls: false,
 
         // Learn about plugins: https://revealjs.com/plugins/
